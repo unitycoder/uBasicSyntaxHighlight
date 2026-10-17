@@ -218,3 +218,7 @@ save and reports with line numbers, so mistakes surface without entering play
 mode.
 
 Source: [Add Visual Studio editor support for other languages](https://learn.microsoft.com/en-us/visualstudio/ide/adding-visual-studio-editor-support-for-other-languages?view=vs-2022)
+
+### Images
+
+<img width="712" height="820" alt="image" src="https://github.com/user-attachments/assets/65db72a9-8a60-4d9b-9bae-4a59bc45df93" />
