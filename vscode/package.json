@@ -1,0 +1,42 @@
+{
+  "name": "ubasic",
+  "displayName": "uBasic",
+  "description": "Syntax highlighting for uBasic (.ubas), the QBasic-style scripting language for Unity.",
+  "version": "0.2.0",
+  "publisher": "unitycoder",
+  "license": "MIT",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ubasic",
+    "qbasic",
+    "basic",
+    "unity"
+  ],
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "ubasic",
+        "aliases": [
+          "uBasic",
+          "ubasic"
+        ],
+        "extensions": [
+          ".ubas"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ubasic",
+        "scopeName": "source.ubasic",
+        "path": "./syntaxes/ubasic.tmLanguage.json"
+      }
+    ]
+  }
+}

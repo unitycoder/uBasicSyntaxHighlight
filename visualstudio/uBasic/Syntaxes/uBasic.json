@@ -1,0 +1,175 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "uBasic",
+  "scopeName": "source.ubasic",
+  "fileTypes": [
+    "ubas"
+  ],
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#procedure-name"
+    },
+    {
+      "include": "#label"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#constant"
+    },
+    {
+      "include": "#control"
+    },
+    {
+      "include": "#declaration"
+    },
+    {
+      "include": "#type"
+    },
+    {
+      "include": "#operator-word"
+    },
+    {
+      "include": "#statement-function"
+    },
+    {
+      "include": "#shape-flag"
+    },
+    {
+      "include": "#builtin"
+    },
+    {
+      "include": "#variable"
+    },
+    {
+      "include": "#operator"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.apostrophe.ubasic",
+          "match": "'.*$"
+        },
+        {
+          "name": "comment.line.rem.ubasic",
+          "match": "(?i)\\bREM\\b.*$"
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.ubasic",
+      "begin": "\"",
+      "end": "\"(?!\")",
+      "patterns": [
+        {
+          "name": "constant.character.escape.ubasic",
+          "match": "\"\""
+        }
+      ]
+    },
+    "procedure-name": {
+      "match": "(?i)\\b(SUB|FUNCTION)\\s+([A-Za-z_][A-Za-z0-9_]*)([%!$]?)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.ubasic"
+        },
+        "2": {
+          "name": "entity.name.function.ubasic"
+        },
+        "3": {
+          "name": "storage.modifier.sigil.ubasic"
+        }
+      }
+    },
+    "label": {
+      "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(:)(?!=)",
+      "captures": {
+        "1": {
+          "name": "entity.name.label.ubasic"
+        },
+        "2": {
+          "name": "punctuation.separator.ubasic"
+        }
+      }
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.ubasic",
+          "match": "(?i)&H[0-9A-F]+"
+        },
+        {
+          "name": "constant.numeric.float.ubasic",
+          "match": "(?i)\\b\\d+\\.\\d*(?:E[+-]?\\d+)?[!#]?|\\B\\.\\d+(?:E[+-]?\\d+)?[!#]?"
+        },
+        {
+          "name": "constant.numeric.integer.ubasic",
+          "match": "(?i)\\b\\d+[%&!]?\\b"
+        }
+      ]
+    },
+    "constant": {
+      "name": "constant.language.ubasic",
+      "match": "(?i)\\b(?:KEY_ENTER|KEY_RIGHT|KEY_SPACE|KEY_DOWN|KEY_LEFT|KEY_ESC|KEY_UP|FALSE|TRUE|PI)(?![A-Za-z0-9_%!$])"
+    },
+    "control": {
+      "name": "keyword.control.ubasic",
+      "match": "(?i)\\b(?:FUNCTION|ELSEIF|SELECT|UNTIL|WHILE|CALL|CASE|ELSE|EXIT|GOTO|LOOP|NEXT|STEP|THEN|WAIT|WEND|END|FOR|SUB|DO|IF|TO)(?![A-Za-z0-9_%!$])"
+    },
+    "declaration": {
+      "name": "keyword.declaration.ubasic",
+      "match": "(?i)\\b(?:RANDOMIZE|SHARED|CONST|DIM|LET|AS)(?![A-Za-z0-9_%!$])"
+    },
+    "type": {
+      "name": "storage.type.ubasic",
+      "match": "(?i)\\b(?:INTEGER|SINGLE|STRING)(?![A-Za-z0-9_%!$])"
+    },
+    "operator-word": {
+      "name": "keyword.operator.word.ubasic",
+      "match": "(?i)\\b(?:AND|MOD|NOT|XOR|OR)(?![A-Za-z0-9_%!$])"
+    },
+    "statement-function": {
+      "name": "support.function.statement.ubasic",
+      "match": "(?i)\\b(?:PALETTE|CIRCLE|LOCATE|SCREEN|COLOR|PAINT|PRINT|SOUND|BEEP|LINE|PLAY|PSET|CLS)(?![A-Za-z0-9_%!$])"
+    },
+    "builtin": {
+      "name": "support.function.builtin.ubasic",
+      "match": "(?i)\\b(?:STRING\\$|KEYHIT|LCASE\\$|MOUSEB|MOUSEX|MOUSEY|RIGHT\\$|SPACE\\$|UCASE\\$|INSTR|LEFT\\$|POINT|TIMER|TRIM\\$|ATN2|CHR\\$|CINT|CSNG|MID\\$|SCRH|SCRW|STR\\$|ABS|ASC|ATN|COS|EXP|INT|KEY|LEN|LOG|MAX|MIN|RND|SGN|SIN|SQR|TAN|VAL)(?![A-Za-z0-9_%!$])"
+    },
+    "shape-flag": {
+      "match": "(?i)(,)\\s*(BF|B|F)(?![A-Za-z0-9_%!$])",
+      "captures": {
+        "1": {
+          "name": "punctuation.separator.ubasic"
+        },
+        "2": {
+          "name": "keyword.other.shape.ubasic"
+        }
+      }
+    },
+    "variable": {
+      "match": "\\b([A-Za-z_][A-Za-z0-9_]*)([%!$])?",
+      "captures": {
+        "1": {
+          "name": "variable.other.ubasic"
+        },
+        "2": {
+          "name": "storage.modifier.sigil.ubasic"
+        }
+      }
+    },
+    "operator": {
+      "name": "keyword.operator.ubasic",
+      "match": "<>|<=|>=|[-+*/\\\\^=<>]"
+    }
+  }
+}

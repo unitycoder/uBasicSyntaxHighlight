@@ -1,0 +1,22 @@
+{
+  "comments": {
+    "lineComment": "'"
+  },
+  "brackets": [
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"", "notIn": ["string"] }
+  ],
+  "surroundingPairs": [
+    ["(", ")"],
+    ["\"", "\""]
+  ],
+  "_comment": "Sigils are part of the identifier: double-clicking count% selects the sigil too.",
+  "wordPattern": "[A-Za-z_][A-Za-z0-9_]*[%!$]?",
+  "indentationRules": {
+    "increaseIndentPattern": "(?i)^\\s*(IF\\b.*\\bTHEN\\s*$|ELSE\\s*$|ELSEIF\\b.*\\bTHEN\\s*$|FOR\\b|WHILE\\b|DO\\b|SELECT\\s+CASE\\b|CASE\\b|SUB\\b|FUNCTION\\b)",
+    "decreaseIndentPattern": "(?i)^\\s*(END\\s+(IF|SELECT|SUB|FUNCTION)\\b|ELSE\\b|ELSEIF\\b|NEXT\\b|WEND\\b|LOOP\\b|CASE\\b)"
+  }
+}
